@@ -1,0 +1,24 @@
+﻿<Window x:Class="CSSaveToFileSysWPFFW.MainWindow"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:CSSaveToFileSysWPFFW"
+        mc:Ignorable="d"
+        Title="MainWindow" Height="450" Width="400">
+    <Grid>
+        <WrapPanel Orientation="Vertical">
+            <Label Content="Mentett xml fájlok:" HorizontalAlignment="Center"/>
+            <ListView x:Name="uiListView" Margin="12 12" Width="372" Height="250"/>
+            <TextBlock x:Name="uiTextBlock" Margin="12 0">Mentés helye:</TextBlock>
+            <ComboBox x:Name="uiComboBox" Margin="12 12">
+                <ComboBoxItem>Tábla</ComboBoxItem>
+                <ComboBoxItem>Modul</ComboBoxItem>
+                <ComboBoxItem>Tárolt Eljárás</ComboBoxItem>
+                <ComboBoxItem>Tárolt Eljárás Argumentum</ComboBoxItem>
+                <ComboBoxItem>Tábla Oszlop</ComboBoxItem>
+            </ComboBox>
+            <Button Content="Mentés a fájlrendszerbe" Click="SaveToFileSys" Width="250"></Button>
+        </WrapPanel>
+    </Grid>
+</Window>
