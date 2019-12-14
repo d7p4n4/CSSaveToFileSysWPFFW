@@ -1,4 +1,5 @@
-﻿using CSSaveToFileSysFW;
+﻿
+using CSSaveToFileSysFW;
 using System;
 using System.Collections.Generic;
 using System.Configuration;
@@ -32,16 +33,30 @@ namespace CSSaveToFileSysWPFFW
 
         private void SaveToFileSys(object subject, RoutedEventArgs e)
         {
+
             ComboBoxItem item = (ComboBoxItem)uiComboBox.SelectedItem;
             string templateName = item.Content.ToString();
             string path = uiTextBlock.Text.ToString();
+            uiListView.ItemsSource = new List<string>();
 
-            uiListView.ItemsSource = new SaveToFileSysFW(
-                sqlConnectionString,
-                templateName,
-                path
-            ).WriteOutAc4yObjectNameList();
+            if (!path.EndsWith("\\"))
+            {
+                MessageBox.Show("Az elérési útvonal '\' jellel végződjön!");
+            }
+            else if (templateName.Equals(""))
+            {
+                MessageBox.Show("Válassz valamit a combobox-ból!");
+            }
+            else
+            {
 
+                uiListView.ItemsSource = new SaveToFileSysFW(
+                    sqlConnectionString,
+                    templateName,
+                    path
+                ).WriteOutAc4yObjectNameList();
+
+            }
         }
     }
 }

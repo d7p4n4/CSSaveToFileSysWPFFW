@@ -10,8 +10,11 @@
         <WrapPanel Orientation="Vertical">
             <Label Content="Mentett xml fájlok:" HorizontalAlignment="Center"/>
             <ListView x:Name="uiListView" Margin="12 12" Width="372" Height="250"/>
-            <TextBlock x:Name="uiTextBlock" Margin="12 0">Mentés helye:</TextBlock>
-            <ComboBox x:Name="uiComboBox" Margin="12 12">
+            <WrapPanel Orientation="Horizontal">
+                <Label Content="Mentés helye: "/>
+                <TextBox x:Name="uiTextBlock" Margin="0 0" BorderBrush="Black" VerticalAlignment="Center" Width="275">c:\Server\AK\outputXmls\Ac4yObject\</TextBox>
+            </WrapPanel>
+            <ComboBox x:Name="uiComboBox"  Margin="12 12">
                 <ComboBoxItem>Tábla</ComboBoxItem>
                 <ComboBoxItem>Modul</ComboBoxItem>
                 <ComboBoxItem>Tárolt Eljárás</ComboBoxItem>
